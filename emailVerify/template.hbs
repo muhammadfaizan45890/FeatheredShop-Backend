@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>Email Verification</title>
+  <style>
+    /* Client-specific resets & fallbacks */
+    .ExternalClass, .ReadMsgBody { width: 100%; background-color: #f9fafb; }
+    body, table, td, p, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+    table, td { border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+    img { border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; }
+    body { margin: 0; padding: 0; background-color: #f9fafb; font-family: 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+    @media only screen and (max-width: 600px) {
+      .container { width: 100% !important; padding: 20px !important; }
+      .button { display: block !important; width: 100% !important; text-align: center !important; box-sizing: border-box !important; }
+      .inner-padding { padding-left: 20px !important; padding-right: 20px !important; }
+      .stack { display: block !important; width: 100% !important; text-align: center !important; }
+    }
+  </style>
+</head>
+<body style="margin: 0; padding: 0; background-color: #f9fafb; font-family: 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif;">
+
+  <!-- Main container (centered table for email clients) -->
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#f9fafb" style="background-color: #f9fafb;">
+    <tr>
+      <td align="center" style="padding: 30px 15px;">
+        <!-- Responsive outer card (max-width 560px) -->
+        <table width="100%" max-width="560" cellpadding="0" cellspacing="0" border="0" style="max-width: 560px; width: 100%; background-color: #ffffff; border-radius: 24px; box-shadow: 0 8px 20px rgba(0,0,0,0.05); border: 1px solid #e5e7eb;">
+          
+          <!-- Header with brand -->
+          <tr>
+            <td style="padding: 32px 32px 16px 32px; text-align: center; border-bottom: 1px solid #f0fdf4;">
+              <div style="display: inline-flex; align-items: center; gap: 10px;">
+                <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #059669, #10b981); border-radius: 12px; display: inline-block; text-align: center; line-height: 40px; vertical-align: middle;">
+                  <span style="font-size: 22px; color: white;">✓</span>
+                </div>
+                <span style="font-size: 24px; font-weight: 700; color: #1f2937; letter-spacing: -0.3px;">
+                  Learn<span style="color: #059669;">Hub</span>
+                </span>
+              </div>
+            </td>
+          </tr>
+
+          <!-- Hero / title -->
+          <tr>
+            <td style="padding: 24px 32px 8px 32px; text-align: center;">
+              <h2 style="margin: 0 0 8px 0; font-size: 28px; font-weight: 700; color: #111827; letter-spacing: -0.2px;">Verify your email address</h2>
+              <p style="margin: 0; font-size: 16px; color: #4b5563; line-height: 1.5;">You're one step away from unlocking your learning journey</p>
+            </td>
+          </tr>
+
+          <!-- Main message -->
+          <tr>
+            <td style="padding: 16px 32px 8px 32px;">
+              <p style="margin: 0 0 12px 0; font-size: 16px; color: #374151; line-height: 1.6;">Hello <strong style="color: #059669;">{{username}}</strong>,</p>
+              <p style="margin: 0 0 16px 0; font-size: 16px; color: #374151; line-height: 1.6;">
+                Thanks for joining LearnHub! Please confirm your email address by clicking the button below. This helps us keep your account secure.
+              </p>
+              <div style="background-color: #f0fdf4; border-left: 4px solid #10b981; padding: 14px 18px; border-radius: 12px; margin: 20px 0;">
+                <p style="margin: 0; font-size: 14px; color: #065f46;">🔒 <strong>Why verify?</strong> Verified accounts get full access to courses, progress tracking, and community features.</p>
+              </div>
+            </td>
+          </tr>
+
+          <!-- Call to action button -->
+          <tr>
+            <td align="center" style="padding: 8px 32px 24px 32px;">
+              <table cellpadding="0" cellspacing="0" border="0" style="margin: 0 auto;">
+                <tr>
+                  <td align="center" bgcolor="#059669" style="background-color: #059669; border-radius: 999px; padding: 0;">
+                    <a href="http://localhost:5173/verify/{{token}}" target="_blank" style="display: inline-block; padding: 14px 32px; background-color: #059669; color: #ffffff; font-size: 16px; font-weight: 600; text-decoration: none; border-radius: 999px; text-align: center; transition: background-color 0.2s; box-shadow: 0 2px 6px rgba(5,150,105,0.3);">Verify my email →</a>
+                  </td>
+                </tr>
+              </table>
+              <p style="margin: 16px 0 0 0; font-size: 13px; color: #6b7280;">Link expires in 24 hours</p>
+            </td>
+          </tr>
+
+          <!-- Alternative instruction -->
+          <tr>
+            <td style="padding: 8px 32px 16px 32px;">
+              <p style="margin: 0; font-size: 14px; color: #6b7280; text-align: center;">
+                If the button doesn't work, copy and paste this link into your browser:<br>
+                <span style="word-break: break-all; font-family: monospace; font-size: 13px; background: #f3f4f6; padding: 4px 8px; border-radius: 6px; display: inline-block;">http://localhost:5173/verify/{{token}}</span>
+              </p>
+            </td>
+          </tr>
+
+          <!-- Divider & footer -->
+          <tr>
+            <td style="padding: 24px 32px 28px 32px; border-top: 1px solid #e5e7eb; text-align: center;">
+              <p style="margin: 0 0 8px 0; font-size: 13px; color: #9ca3af;">
+                You received this email because you signed up for LearnHub.<br>
+                If you didn't create an account, you can safely ignore this message.
+              </p>
+              <p style="margin: 16px 0 0 0; font-size: 12px; color: #d1d5db;">
+                © 2025 LearnHub, Inc. All rights reserved.
+              </p>
+              <div style="margin-top: 20px;">
+                <a href="#" style="display: inline-block; margin: 0 8px; color: #9ca3af; text-decoration: none; font-size: 12px;">Help Center</a>
+                <span style="color: #e5e7eb;">|</span>
+                <a href="#" style="display: inline-block; margin: 0 8px; color: #9ca3af; text-decoration: none; font-size: 12px;">Privacy</a>
+                <span style="color: #e5e7eb;">|</span>
+                <a href="#" style="display: inline-block; margin: 0 8px; color: #9ca3af; text-decoration: none; font-size: 12px;">Unsubscribe</a>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
